@@ -1,9 +1,9 @@
 const mysql = require('mysql2');
 const dbConfig = {
-  host: process.env.MYSQL_HOST,
-  user: process.env.MYSQL_USER,
-  password: process.env.MYSQL_PASSWORD,
-  database: process.env.MYSQL_DB,
+  host: 'localhost',
+  user: 'root',
+  password: '4321',
+  database: 'APIwebbackend',
 };
 
 const db = mysql.createConnection(dbConfig);
@@ -17,3 +17,5 @@ db.connect((err) => {
 });
 
 module.exports = db;
+
+console.log(dbConfig)

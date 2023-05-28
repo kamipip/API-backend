@@ -15,13 +15,6 @@ anolancamento int,
 capa varchar(300)
 );
 
-create table AlbunsPreferidos (
-usuario_id int,
-album_id int,
-primary key (usuario_id, album_id),
-foreign key (usuario_id) references Usuarios(codigo),
-foreign key (album_id) references Albuns(cod_album)
-);
 
 insert into Usuarios (nome, email, senha) values
   ('João Silva', 'joao@email.com', '123'),
@@ -39,7 +32,3 @@ insert into Usuarios (nome, email, senha) values
         ('Acabou Chorare', 'Novos Baianos', '1972', 'https://upload.wikimedia.org/wikipedia/pt/f/f6/AcabouChorare.jpg'),
         ('Tropicália ou Panis et Circencis', 'Vários Artistas', '1968', 'https://upload.wikimedia.org/wikipedia/pt/e/e2/PaniseCircenses.jpeg');
         
-
--- Ligando usuarios aos albuns preferidos
-insert into AlbunsPreferidos (usuario_id, album_id)
-VALUES (1, 2), (2, 1), (3, 1), (4, 3), (5, 3), (6, 4), (7, 3), (8, 4);
